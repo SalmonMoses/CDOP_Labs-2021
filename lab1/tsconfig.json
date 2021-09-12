@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "None",
+    "target": "esnext",
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
