@@ -20,7 +20,7 @@ table td {
   padding: 5px;
 }
 
-.add-btn {
+button {
   border: solid transparent;
   border-radius: 3px;
   outline: none;
@@ -31,5 +31,13 @@ table td {
   text-decoration: none;
   font-size: large;
   cursor: pointer;
+}
+
+.add-btn {
+  background-color: #27ae60;
   margin-top: 1em;
+}
+
+.remove-btn {
+  background-color: #f11737;
 }

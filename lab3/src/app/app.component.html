@@ -3,14 +3,17 @@
   <tr>
     <th>Продукт</th>
     <th>Ціна</th>
+    <th></th>
   </tr>
-  <tr *ngFor="let product of products">
+  <tr *ngFor="let product of products; index as i">
     <th><input [(ngModel)]="product.name"></th>
     <th><input type="number" [(ngModel)]="product.price"></th>
+    <th><button class="remove-btn" (click)="deleteProduct(i)">Видалити</button></th>
   </tr>
   <tr>
     <th>Всього</th>
     <th>{{this.sumPrice}} UAH</th>
+    <th></th>
   </tr>
   </tbody>
   <tfoot>
