@@ -19,11 +19,7 @@ export class AppComponent {
   }
 
   deleteProduct(index: number) {
-    if (index === 0) {
-      this.products.shift();
-    } else if (index === this.products.length - 1) {
-      this.products.pop();
-    } else {
+    if(index >= 0 && index < this.products.length) {
       this.products.splice(index, 1);
     }
   }
