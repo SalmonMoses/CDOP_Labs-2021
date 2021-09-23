@@ -1,0 +1,19 @@
+<table>
+  <tbody>
+  <tr>
+    <th>Продукт</th>
+    <th>Ціна</th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <th><input [(ngModel)]="product.name"></th>
+    <th><input type="number" [(ngModel)]="product.price"></th>
+  </tr>
+  <tr>
+    <th>Всього</th>
+    <th>{{this.sumPrice}} UAH</th>
+  </tr>
+  </tbody>
+  <tfoot>
+  <button class="add-btn" (click)="addProduct()">Додати продукт</button>
+  </tfoot>
+</table>
