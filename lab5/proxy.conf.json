@@ -1,0 +1,10 @@
+{
+  "/piplir": {
+    "target": "https://pipl.ir/v1",
+    "secure": true,
+    "pathRewrite": {
+      "^/piplir": ""
+    },
+    "changeOrigin": true
+  }
+}

@@ -1,0 +1,35 @@
+<div fxLayout="column" fxLayoutAlign="space-between">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <h2>Worker details</h2>
+    <button mat-icon-button (click)="onCloseClick()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div fxLayout="row">
+    <mat-tab-group>
+      <mat-tab label="Personal">
+        <p>Name: {{data.person.personal.name}} {{data.person.personal.last_name}}</p>
+        <p>Age: {{data.person.personal.age}}</p>
+        <p>Gender: {{data.person.personal.gender}}</p>
+        <p>City: {{data.person.personal.city}}</p>
+        <p>Country: {{data.person.personal.country}}</p>
+      </mat-tab>
+      <mat-tab label="Education & Work">
+        <h3>Education</h3>
+        <p>Certificate: {{data.person.education.certificate}}</p>
+        <p>University: {{data.person.education.university}}</p>
+        <mat-divider></mat-divider>
+        <h3>Work</h3>
+        <p>Country code: {{data.person.work.country_code}}</p>
+        <p>Position: {{data.person.work.position}}</p>
+        <p>Salary: {{data.person.work.salary}}</p>
+        <p>Insurance: {{data.person.work.insurance | yesNo | titlecase}}</p>
+      </mat-tab>
+      <mat-tab label="Contact information">
+        <p>Email: {{data.person.online_info.email}}</p>
+        <p>Username: {{data.person.online_info.username}}</p>
+        <p>Cellphone: {{data.person.personal.cellphone}}</p>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
