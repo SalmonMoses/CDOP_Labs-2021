@@ -24,7 +24,7 @@ export class WorkersTableComponent implements OnInit {
   }
 
   openDialog(row: TableRow): void {
-    const dialogRef = this.dialog.open(WorkerInfoDialog, {
+    this.dialog.open(WorkerInfoDialog, {
       data: row
     });
   }

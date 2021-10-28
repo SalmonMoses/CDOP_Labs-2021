@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Posts</ion-title>
+    <ion-toggle slot="secondary" [(ngModel)]="tableMode"></ion-toggle>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner *ngIf="loading"></ion-spinner>
+  <app-post-table *ngIf="!loading && tableMode" [posts]="posts"></app-post-table>
+  <app-post-list *ngIf="!tableMode" [posts]="posts"></app-post-list>
+</ion-content>
