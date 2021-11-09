@@ -1,0 +1,43 @@
+<div class="form-card">
+  <h3>Проверка формы</h3>
+  <form>
+    <table>
+      <tr>
+        <td>Логин: <span class="required-symbol">*</span></td>
+        <td><input class="text-input" (input)="formModel.login = getValue($event)"></td>
+        <td class="error-text" id="login-error" *ngIf="getLoginError()">{{getLoginError()}}</td>
+      </tr>
+      <tr>
+        <td>Пароль: <span class="required-symbol">*</span></td>
+        <td><input class="text-input" type="password" (input)="formModel.password = getValue($event)"></td>
+        <td class="error-text" id="password-error" *ngIf="getPasswordError()">{{getPasswordError()}}</td>
+      </tr>
+      <tr>
+        <td>Повторите пароль: <span class="required-symbol">*</span></td>
+        <td><input class="text-input" type="password" (input)="formModel.repeatedPassword = getValue($event)"></td>
+        <td class="error-text" id="repeat-password-error"
+            *ngIf="formModel.passwordIsNotEmpty() && getRepeatedPasswordError()">{{getRepeatedPasswordError()}}</td>
+      </tr>
+      <tr>
+        <td>Email адрес: <span class="required-symbol">*</span></td>
+        <td><input class="text-input" (input)="formModel.email = getValue($event)"></td>
+        <td class="error-text" id="email-error" *ngIf="getEmailError()">{{getEmailError()}}</td>
+      </tr>
+      <tr>
+        <td>Телефон:</td>
+        <td><input class="text-input" (input)="formModel.phone = getValue($event)"></td>
+        <td class="error-text" id="phone-error" *ngIf="getPhoneError()">{{getPhoneError()}}</td>
+      </tr>
+      <tr>
+        <td>О себе: <span class="required-symbol">*</span></td>
+        <td><textarea class="text-input" (input)="formModel.aboutMe = getValue($event)"></textarea></td>
+        <td class="error-text" id="about-me-error" *ngIf="getAboutMeError()">{{getAboutMeError()}}</td>
+      </tr>
+      <tr>
+        <td>Получать рассылку:</td>
+        <td><input type="checkbox" [(ngModel)]="formModel.getNewsletter"></td>
+      </tr>
+    </table>
+    <button class="submit-button" id="submit-button" [disabled]="!formModel.validate()" (click)="handleSubmit()">Отправить</button>
+  </form>
+</div>

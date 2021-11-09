@@ -4,5 +4,3 @@ export interface Post {
   title: string;
   body: string;
 }
-
-export type PostDb = Map<number, Post>;

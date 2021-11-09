@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TypicodeService } from '../services/typicode/typicode.service';
-import { Post, PostDb } from '../services/typicode/post';
+import { Post } from '../services/typicode/post';
 import { catchError } from 'rxjs/operators';
 import { ToastController } from '@ionic/angular';
 

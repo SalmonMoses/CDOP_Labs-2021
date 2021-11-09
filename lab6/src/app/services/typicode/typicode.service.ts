@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { TypicodeModule } from './typicode.module';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { Post, PostDb } from './post';
+import { Post } from './post';
 import { map, tap } from 'rxjs/operators';
 
 @Injectable({

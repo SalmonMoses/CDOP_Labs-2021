@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Post } from '../typicode/post';
 import { Storage } from '@ionic/storage-angular';
-import { FavoritePostsModule } from './favorite-posts.module';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +12,7 @@ export class FavoritePostsService {
   private storage: Storage | null = null;
 
   constructor(storage: Storage) {
-    this.init(storage);
+    this.initStorage(storage);
   }
 
   public isFavorite(postToFind: Post) {
@@ -39,12 +38,12 @@ export class FavoritePostsService {
     this.favoritePosts$.next(this.favoritePosts);
   }
 
-  private async init(storage: Storage) {
+  private async initStorage(storage: Storage) {
     this.storage = await storage.create();
     const favorites = await this.storage.get('favorites');
-    if(favorites) {
+    if (favorites) {
       this.favoritePosts = favorites as Post[];
-      this.favoritePosts$.next(this.favoritePosts)
+      this.favoritePosts$.next(this.favoritePosts);
     }
   }
 }
